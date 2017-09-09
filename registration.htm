@@ -1,0 +1,245 @@
+<DOCTYPE html>
+    <html>
+
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>registration</title>
+        <meta name="keywords" content="התעמלות קרקע התעמלות מכשירים קפיץ קפוץ התעמלות בנות כדורסל בנים ירושלים תהילה פרנקל ציונה רוטנשטרייך ציונה לוין תמימה פטרזייל תמימה פטרזיל גימבורי פעילות לבנות דתיות חוגים חוג לבנות מכון וינגייט">
+        <script src='registrationRuntime.js'></script>
+        <link rel="stylesheet" href="/w3.css">
+        <style>
+            select {
+                direction: rtl;
+            }
+            
+            input {
+                direction: rtl;
+            }
+            
+            span {
+                direction: rtl;
+            }
+            
+            .w3-guttman-yad {
+                font-family: "Guttman Yad-Light";
+            }
+
+            #back {
+               position: relative;
+               bottom: 50px; 
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="w3-container  w3-right w3-text-right" style="width:5%"></div>
+        <div class="w3-container  w3-right w3-text-right" style="width:85%">
+            <br>
+            <div class="w3-border w3-border-red w3-container w3-purple">
+                <div class="w3-row-padding">
+                    <div class="w3-twothird  w3-right w3-text-right">
+                        <h1 class=" w3-right w3-text-right w3-text-white">טופס הרשמה לפעילות <span class="w3-guttman-yad">קפיץ קפוץ</span> לשנת תשע"ח</h1>
+                    </div>
+                    <div class="w3-third w3-left">
+                        <img src="/registration/Files/img.jpg" class=" w3-padding-top" alt="לוגו קפיץ קפוץ">
+                    </div>
+                </div>
+                <div class="w3-row-padding">
+                    <div class="w3-third w3-right w3-text-right">
+                        <a class="w3-xxlarge" id="back" href="/">חזרה לדף הבית</a>
+                    </div>
+                </div>
+                <footer><span class="w3-container w3-right w3-text-right w3-text-white">דפי מידע: <a target="_blank" href=http://gymnastics.co.il/index.files/KatamonCurrent.pdf>קטמון בנות</a>, <a target="_blank" href="http://gymnastics.co.il/index.files/KatamonBoysCurrent.pdf">קטמון בנים</a>,
+                    <a target="_blank" href="http://gymnastics.co.il/index.files/KMosheCurrent.pdf">קרית משה</a>, <a target="_blank" href="http://gymnastics.co.il/index.files/homat_shemuelCurrent.pdf">חומת שמואל</a>.</span></footer>
+            </div>
+            <form action="/index.files/a.php?num=0" method="POST" id='form' onreset='return confirm("האם לנקות")' class="w3-container" onsubmit="return validateForm(this)"
+                autocomplete="off" enctype="multipart/form-data">
+                <div class="w3-row-padding w3-indigo w3-border-top w3-border-right w3-border-left w3-border-red" id="add">
+                    <div class="w3-col w3-left" style="width:20%">
+                        <button class="w3-btn" type="button" onclick="clickCounter()">הוסף מתעמל/ת</button>
+                    </div>
+                    <div class="w3-col w3-left" style="width:20%">
+                        <button class="w3-btn" type="button" onclick="removeStudent()">הסר מתעמל/ת</button>
+                    </div>
+                    <div class="w3-rest w3-right w3-text-right">
+                        <a class="w3-text-amber" target="_blank" href="http://gymnastics.co.il/index.files/PaymentCurrent.pdf">דף מידע על תשלום</a>
+                    </div>
+                </div>
+                <div class="w3-row-padding w3-indigo w3-border-right w3-border-left w3-border-bottom w3-border-red">
+
+                    <div class=" w3-right w3-text-right w3-quarter" id='price'>
+                    </div>
+                    <div class="w3-quarter  w3-right w3-text-right" id='numOfPrice'>
+                    </div>
+                    <div class="w3-quarter  w3-right w3-text-right" id='priceDiv'>
+                    </div>
+                    <br><br><br><br>
+                </div>
+                <div class="w3-border w3-border-red w3-container w3-blue">
+                    <br>
+                    <div class="w3-row-padding">
+                        <div class="w3-quarter  w3-right w3-text-right">
+                            <label class="w3-text-white w3-label  w3-right w3-text-right"> שם האב<span class="w3-text-red">*</span></label>
+                            <input type="text" name="dadName" class="w3-input  w3-right w3-text-right" placeholder="שם האב" style="text-align:right">
+                        </div>
+
+                        <div class="w3-quarter  w3-right w3-text-right">
+                            <label class="w3-text-white w3-label  w3-right w3-text-right" id="dadId">תעודת זהות האב</label>
+                            <input class="w3-input  w3-right w3-text-right" type="text" name="dadId" placeholder="תעודת זהות אב" class="id" style="text-align:right"
+                                onchange="validateDadId()">
+                        </div>
+
+                        <div class="w3-quarter w3-row w3-right w3-text-right">
+                            <div class="w3-col w3-right" style="width:65%">
+                                <label class="w3-text-white w3-label  w3-right w3-text-right">טלפון האב<span class="w3-text-red">*</span></label>
+                                <input class="w3-input w3-right w3-text-right" type="text" name="dadNumEnd" placeholder="טלפון אב" style="text-align:right"
+                                    onchange="validateDadPhone()">
+                            </div>
+                            <div class="w3-col w3-right" style="width:10%">
+                                <br>
+                                <input class="w3-input w3-right w3-text-right" type="text" value="-" disabled>
+                            </div>
+                            <div class="w3-col w3-right" style="width:25%">
+                                <br>
+                                <input class="w3-input w3-right w3-text-right" type="text" name="dadNumStart" style="text-align:right" onchange="validateDadPhone()">
+                            </div>
+                        </div>
+
+                        <div class="w3-quarter  w3-right w3-text-right">
+                            <label class="w3-text-white w3-label  w3-right w3-text-right">דוא"ל האב<span class="w3-text-red">*</span></label>
+                            <input class="w3-input  w3-right w3-text-right" onchange="validateDadMail()" type="email" name="dadMail" placeholder="דוא''ל אב"
+                                style="text-align:right">
+                        </div>
+                    </div>
+
+                    <div class='w3-row-padding'>
+                        <div class="w3-quarter  w3-right w3-text-right">
+                            <label class="w3-text-white w3-label  w3-right w3-text-right">שם האם<span class="w3-text-red">*</span></label>
+                            <input type="text" name="momName" class="w3-input  w3-right w3-text-right" placeholder="שם האם" style="text-align:right">
+                        </div>
+
+                        <div class="w3-quarter  w3-right w3-text-right">
+                            <label class="w3-text-white w3-label  w3-right w3-text-right" id="momId">תעודת זהות האם</label>
+                            <input class="w3-input  w3-right w3-text-right" type="text" name="momId" placeholder="תעודת זהות אם" class="id" style="text-align:right"
+                                onchange="validateMomId()">
+                        </div>
+                        <div class="w3-quarter  w3-right w3-text-right">
+                            <div class="w3-col w3-right" style="width:65%">
+                                <label class="w3-text-white w3-label  w3-right w3-text-right">טלפון האם<span class="w3-text-red">*</span></label>
+                                <input class="w3-input w3-right w3-text-right" type="text" name="momNumEnd" placeholder="טלפון אם" style="text-align:right"
+                                    onchange="validateMomPhone()">
+                            </div>
+                            <div class="w3-col w3-right" style="width:10%">
+                                <br>
+                                <input class="w3-input w3-right w3-text-right" type="text" value="-" disabled>
+                            </div>
+                            <div class="w3-col w3-right" style="width:25%">
+                                <br>
+                                <input class="w3-input w3-right w3-text-right" type="text" name="momNumStart" style="text-align:right" onchange="validateMomPhone()">
+                            </div>
+                        </div>
+
+                        <div class="w3-quarter  w3-right w3-text-right">
+                            <label class="w3-text-white w3-label  w3-right w3-text-right">דוא"ל האם<span class="w3-text-red">*</span></label>
+                            <input class="w3-input  w3-right w3-text-right" onchange="validateMomMail()" type="email" name="momMail" placeholder="דוא''ל אם"
+                                style="text-align:right">
+                        </div>
+                    </div>
+
+                    <div class="w3-row-padding">
+                        <div class="w3-third  w3-right w3-text-right">
+                            <label class="w3-text-white w3-label  w3-right w3-text-right">שם משפחה<span class="w3-text-red">*</span></label>
+                            <input type="text" name="familyName" placeholder="שם משפחה" style="text-align:right" class="w3-input  w3-right w3-text-right"
+                                required>
+                        </div>
+
+                        <div class="w3-third w3-row w3-right w3-text-right">
+                            <div class="w3-col w3-right" style="width:65%">
+                                <label class="w3-text-white w3-label  w3-right w3-text-right">טלפון בבית</label>
+                                <input type="text" name="homeNumEnd" onchange="validateHomeNum()" class="w3-input  w3-right w3-text-right" placeholder="טלפון בבית"
+                                    style="text-align:right">
+                            </div>
+                            <div class="w3-col w3-right" style="width:10%">
+                                <br>
+                                <input class="w3-input w3-center w3-text-center" type="text" value="-" disabled>
+                            </div>
+                            <div class="w3-col w3-right" style="width:25%">
+                                <br>
+                                <input type="text" name="homeNumStart" onchange="validateHomeNum()" class="w3-input w3-right w3-text-right" style="text-align:right">
+                            </div>
+                        </div>
+
+                        <div class="w3-third w3-right w3-text-right">
+                            <label class="w3-text-white w3-label  w3-right w3-text-right">עיר מגורים<span class="w3-text-red">*</span></label>
+                            <input class="w3-input  w3-right w3-text-right" type="text" name="city" value="ירושלם" style="text-align:right" required>
+                        </div>
+                    </div>
+                    <div class="w3-row-padding">
+                        <div class="w3-col  w3-right w3-text-right" style="width: 30%">
+                            <label class="w3-text-white w3-label  w3-right w3-text-right">שכונה</label>
+                            <input class="w3-input  w3-right w3-text-right" type="text" name="niber" placeholder="שכונה" style="text-align:right">
+                        </div>
+                        <div class="w3-col  w3-right w3-text-right" style="width: 30%">
+                            <label class="w3-text-white w3-label  w3-right w3-text-right">רחוב מגורים ומספר בית<span class="w3-text-red">*</span></label>
+                            <input class="w3-input  w3-right w3-text-right" type="text" name="street" placeholder="רחוב ומספר בית" style="text-align:right"
+                                required>
+                        </div>
+
+                        <div class="w3-col  w3-right w3-text-right" style="width: 30%">
+                            <label class="w3-text-white w3-label  w3-right w3-text-right">מיקוד</label>
+                            <input class="w3-input  w3-right w3-text-right" onchange="validateLocation()" type="text" name="location" placeholder="מיקוד"
+                                style="text-align:right">
+                        </div>
+
+                        <div class="w3-col  w3-right w3-text-right" style="width:10%">
+                            <label class="w3-text-white w3-label  w3-right w3-text-right">תושב חו"ל</label>
+                            <input class="w3-check  w3-right w3-text-right" type="checkbox" name="out" value="0" id="out" onchange="changeOut(this);">
+                        </div>
+                    </div>
+                    <br>
+                </div>
+                <div class="w3-border w3-container w3-row-padding w3-padding-large w3-border-red">
+                    <div class="w3-col w3-container w3-right w3-padding-medium w3-border w3-border-red" style="width:55%">
+                        <label class="w3-label w3-right"><a target="_blank" href="http://gymnastics.co.il/index.files/Harshma_Multi_years.pdf" target="_blank">:טופס הרשמה</a></label>
+                        <input class="w3-input " type="file" name="perant">
+
+                        <label class="w3-label w3-right"><a target="_blank" href="http://gymnastics.co.il/index.files/kfitz_kfotz_doctor_note.pdf" target="_blank">:אישור רופא</a></label>
+                        <input class="w3-input " type="file" name="medic">
+
+                        <span class="w3-label w3-right w3-text-black"><a class="w3-text-teal" target="_blank" href="http://gymnastics.co.il/index.files/Horat_Keva.pdf" target="_blank">הוראת קבע חתומה</a>(אין צורך להחתים את הבנק):</span>
+                        <input class="w3-input " type="file" name="bank">
+                        <span style="text-align:right" class="w3-right w3-text-right">את כל הטפסים הללו ניתן להוריד <a class="w3-text-teal" target="_blank" href=http://gymnastics.co.il/index.files/forms.htm>כאן</a>, למלא ולחתום. בבקשה להעביר אלינו לאולם, או דרך המערכת הזאת, בדוא"ל או בפקס.</span>
+                        <center><b><a class="w3-text-teal" target="_blank" href="mailto:tehila@gymnastics.co.il">tehila@gymnastics.co.il</a></b></center>
+                        <center>פקס: 077-5008798</center>
+                    </div>
+                    <div class="w3-col w3-right" style="width:3%"><br></div>
+
+                    <div class="w3-col w3-right w3-text-right w3-border w3-border-red w3-padding-xlarge" style="width:40%">
+                        <h4 class="w3-right w3-text-right w3-text-red">הצהרת הורים<span class="w3-text-red">*</span></h4>
+                        <div class="w3-row-padding">
+                            <div class="w3-col" style="width:80%">
+                                <span style="text-align:right" class="w3-label w3-right w3-text-right w3-text-black">קראנו ואנו מסכימים <a class="w3-text-teal" target="_blank" href="http://gymnastics.co.il/index.files/Harshma_Multi_years.pdf"> לתנאי הפעילות</a> של <span class="w3-guttman-yad">קפיץ קפוץ</span>                                בע”מ, אנו מאשרים גם לשלוח לנו הודעות הקשורות לפעילות בדוא”ל. </span>
+                                <span style="text-align:right" class="w3-label w3-right w3-text-right w3-text-black">כמו כן, אנו מאשרים כי לא חל שינוי במצב הבריאות של הנ"ל מאז האישור הרפואי שהוגש ל<span class="w3-guttman-yad">קפיץ קפוץ</span>                                בעבר. אחרת נעביר אישור רופא עד תחילת הפעילות.</span>
+
+                            </div>
+                            <div class="w3-col w3-right" style="width:10%">
+                                <input class="w3-check w3-right w3-text-right" type="checkbox" name="accept" required>
+                            </div>
+                        </div>
+                    </div>
+                        <footer><span class="w3-container w3-left w3-text-right">דפי מידע: <a class="w3-text-teal" target="_blank" href=http://gymnastics.co.il/index.files/KatamonCurrent.pdf>קטמון בנות</a>, <a class="w3-text-teal" target="_blank" href="http://gymnastics.co.il/index.files/KatamonBoysCurrent.pdf">קטמון בנים</a>,
+                    <a class="w3-text-teal" target="_blank" href="http://gymnastics.co.il/index.files/KMosheCurrent.pdf">קרית משה</a>, <a class="w3-text-teal" target="_blank" href="http://gymnastics.co.il/index.files/homat_shemuelCurrent.pdf">חומת שמואל</a>,<a class="w3-text-teal" target="_blank" href="http://gymnastics.co.il/index.files/PaymentCurrent.pdf">דף מידע על תשלום</a>.</span></footer>
+                </div>
+                <div class="w3-row-padding">
+                    <div class="w3-half">
+                        <input class=" w3-right w3-text-right w3-btn" type="reset" value="clean/מחק">
+                    </div>
+                    <div class="w3-half">
+                        <input class="w3-left w3-btn" type="submit" value="submit/אשר">
+                    </div>
+                </div>
+            </form>
+            <script>GetYear();sessionStorage.removeItem("clickcount");clickCounter();</script>
+        </div>
+    </body>
+    </html>
